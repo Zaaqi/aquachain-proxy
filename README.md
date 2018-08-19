@@ -1,6 +1,6 @@
-# ether-proxy
+# aquachain-proxy
 
-Ethereum mining proxy with web-interface.
+Aquachain mining proxy with web-interface.
 
 **Proxy feature list:**
 
@@ -24,22 +24,22 @@ Export GOPATH:
 
 Install required packages:
 
-    go get github.com/ethereum/ethash
-    go get github.com/ethereum/go-ethereum/common
+    go get github.com/aquanetwork/aquachain/common
+    go get github.com/aquanetwork/aquachain/consensus/lightvalid
     go get github.com/goji/httpauth
     go get github.com/gorilla/mux
     go get github.com/yvasiyarov/gorelic
 
 Compile:
 
-    go build -o ether-proxy main.go
+    go build -o aqua-proxy main.go
 
 ### Building on Windows
 
 Follow [this wiki paragraph](https://github.com/ethereum/go-ethereum/wiki/Installation-instructions-for-Windows#building-from-source) in order to prepare your environment.
 Install required packages (look at Linux install guide above). Then compile:
 
-    go build -o ether-proxy.exe main.go
+    go build -o aqua-proxy.exe main.go
 
 ### Building on Mac OS X
 
@@ -59,35 +59,33 @@ Configuration is self-describing, just copy *config.example.json* to *config.jso
 "upstream": [
   {
     "pool": true,
-    "name": "EuroHash.net",
-    "url": "http://eth-eu.eurohash.net:8888/miner/0xb85150eb365e7df0941f0cf08235f987ba91506a/proxy",
+    "name": "pool.rplant.xyz",
+    "url": "http://aquapool.rplant.xyz:19998/0x892d23e26416f44e4fb32f1b10e8400b8f6cdd5f/proxy",
     "timeout": "10s"
   },
   {
-    "name": "backup-geth",
+    "name": "backup-aqua",
     "url": "http://127.0.0.1:8545",
     "timeout": "10s"
   }
 ],
 ```
 
-In this example we specified [EuroHash.net](https://eurohash.net) mining pool as main mining target and a local geth node as backup for solo.
+In this example we specified [aquapool.rplant.xyz](https://aquapool.rplant.xyz) mining pool as main mining target and a local geth node as backup for solo.
 
-With <code>"submitHashrate": true|false</code> proxy will forward <code>eth_submitHashrate</code> requests to upstream.
+With <code>"submitHashrate": true|false</code> proxy will forward <code>aqua_submitHashrate</code> requests to upstream.
 
 #### Running
 
-    ./ether-proxy config.json
+    ./aqua-proxy config.json
 
 #### Mining
 
-    ethminer -F http://x.x.x.x:8546/miner/5/gpu-rig -G
-    ethminer -F http://x.x.x.x:8546/miner/0.1/cpu-rig -C
+    aquacppminer -F http://x.x.x.x:8546/miner/1000000/worker
 
 ### Pools that work with this proxy
 
-* [EuroHash.net](https://eurohash.net) EU Ethereum mining pool
-* [SuprNova.cc](https://eth.suprnova.cc) SuprNova ETH Pool
+* [aquapool.rplant.xyz](https://aquapool.rplant.xyz) RU Aquachain mining pool
 
 Pool owners, apply for listing here. PM me for implementation details.
 
