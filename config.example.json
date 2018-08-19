@@ -21,8 +21,8 @@
 	"upstream": [
 		{
 			"pool": true,
-			"name": "EuroHash.net",
-			"url": "http://eth-eu.eurohash.net:8888/miner/0xb85150eb365e7df0941f0cf08235f987ba91506a/proxy",
+			"name": "aquapool.rplant.xyz",
+                       "url": "http://aquapool.rplant.xyz:19998/0x892d23e26416f44e4fb32f1b10e8400b8f6cdd5f/proxy",
 			"timeout": "10s"
 		},
 		{
