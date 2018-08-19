@@ -10,8 +10,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/aquanetwork/aquachain/consensus/lightvalid"
-	"github.com/aquanetwork/aquachain/common"
+	"gitlab.com/aquachain/aquachain/consensus/lightvalid"
+	"gitlab.com/aquachain/aquachain/common"
 )
 
 var hasher = lightvalid.New()
