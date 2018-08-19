@@ -10,11 +10,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ethereum/ethash"
-	"github.com/ethereum/go-ethereum/common"
+	"github.com/aquanetwork/aquachain/consensus/lightvalid"
+	"github.com/aquanetwork/aquachain/common"
 )
 
-var hasher = ethash.New()
+var hasher = lightvalid.New()
 
 type Miner struct {
 	sync.RWMutex
