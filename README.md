@@ -24,8 +24,8 @@ Export GOPATH:
 
 Install required packages:
 
-    go get github.com/aquanetwork/aquachain/common
-    go get github.com/aquanetwork/aquachain/consensus/lightvalid
+    go get gitlab.com/aquachain/aquachain/common
+    go get gitlab.com/aquachain/aquachain/consensus/lightvalid
     go get github.com/goji/httpauth
     go get github.com/gorilla/mux
     go get github.com/yvasiyarov/gorelic
